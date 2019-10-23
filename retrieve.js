@@ -21,7 +21,7 @@ router.get('/',jsonParser,function(req,res){
             // res.setHeader('Content-Type', type)
             // res.write(result.first().contents)
             // res.end()
-            res.writeHead({'Content-Type': type})
+            res.writeHead(200,{'Content-Type': type})
             res.send(result.first().contents)
         }
     })
