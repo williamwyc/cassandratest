@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var bodyParser = require('body-parser');
 var path = require('path');
+var multer = require('multer');
 var urlencodedParser = bodyParser.urlencoded({extended: false})
 var cassandra = require('cassandra-driver');
 var upload = multer({ dest: 'uploads/' })
