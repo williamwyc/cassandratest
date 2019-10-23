@@ -10,7 +10,8 @@ var upload = multer({ dest: 'uploads/' })
 router.post('/',upload.single('contents'),function(req,res){
     var data = req.body
     var query = 'INSERT INTO imgs (filename, contents) VALUES (?, ?)'; 
-    var params = [data.filename, req.file];
+    console.log(req.file.buffer);
+    var params = [data.filename, req.file.buffer];
     client = req.app.locals.client
     client.execute(query, params, function(err){
         if(err){
