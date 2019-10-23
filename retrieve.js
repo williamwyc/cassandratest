@@ -7,9 +7,8 @@ var jsonParser = bodyParser.json()
 var cassandra = require('cassandra-driver');
 
 router.get('/',jsonParser,function(req,res){
-    var data = req.body
     var query = 'SELECT contents FROM imgs WHERE filename = ?'; 
-    var params = [data.filename];
+    var params = [req.query.filename];
     client = req.app.locals.client
     client.execute(query, params, function(err, result){
         if(err){
