@@ -15,8 +15,9 @@ router.get('/',jsonParser,function(req,res){
             console.log(err);
             res.json({status:"error"});
         }else{
-            res.writeHead({'Content-type': 'image/'+req.query.filename.split('.')[1]})
-            res.send(result.first().contents);
+            type = 'image/'+req.query.filename.split('.')[1]
+            res.writeHead({'Content-type': type})
+            res.send(result.first().contents)
         }
     })
 })
