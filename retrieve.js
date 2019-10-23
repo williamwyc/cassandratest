@@ -18,9 +18,11 @@ router.get('/',jsonParser,function(req,res){
         }else{
             type = 'image/'+req.query.filename.split('.')[1]
             console.log(type)
-            res.setHeader('Content-Type', type)
-            res.write(result.first().contents)
-            res.end()
+            // res.setHeader('Content-Type', type)
+            // res.write(result.first().contents)
+            // res.end()
+            res.type(type)
+            res.send(result.first().contents)
         }
     })
 })
