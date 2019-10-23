@@ -22,7 +22,7 @@ router.get('/',jsonParser,function(req,res){
             // res.write(result.first().contents)
             // res.end()
             res.writeHead(200,{'Content-Type': type})
-            res.send(result.first().contents)
+            res.end(result.first().contents,'binary')
         }
     })
 })
