@@ -15,7 +15,7 @@ router.get('/',jsonParser,function(req,res){
             console.log(err);
             res.json({status:"error"});
         }else{
-            res.type('image/'+data.filename.split('.')[1])
+            res.type('image/'+req.query.filename.split('.')[1])
             res.send(result.first().contents);
         }
     })
